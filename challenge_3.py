@@ -22,14 +22,16 @@ response_text = response.text
 
 parsed_response = json.loads(response_text)
 
-print(parsed_response)
-print(type(parsed_response))
+# print(parsed_response)
+# print(type(parsed_response))
 
 grades = []
 
 for student in parsed_response["students"]:
 	grades.append(student["finalGrade"])
 	
-print(grades)
+# print(grades)
 
 print(st.mean(grades))
+print(min(grades))
+print(max(grades))
