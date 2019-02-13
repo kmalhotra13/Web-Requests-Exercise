@@ -32,6 +32,6 @@ for student in parsed_response["students"]:
 	
 # print(grades)
 
-print(st.mean(grades))
-print(min(grades))
-print(max(grades))
+print("The average grade is: " + str(st.mean(grades)))
+print("The minimum grade is: " + str(min(grades)))
+print("The maximum grade is: " + str(max(grades)))
