@@ -7,6 +7,7 @@
 
 import json
 import requests
+import statistics as st
 
 request_url = "https://raw.githubusercontent.com/prof-rossetti/georgetown-opim-243-201901/master/data/gradebook.json"
 response = requests.get(request_url)
@@ -24,4 +25,11 @@ parsed_response = json.loads(response_text)
 print(parsed_response)
 print(type(parsed_response))
 
-# print("The name of the product is: " + parsed_response["name"])
+grades = []
+
+for student in parsed_response["students"]:
+	grades.append(student["finalGrade"])
+	
+print(grades)
+
+print(st.mean(grades))
