@@ -25,13 +25,16 @@ parsed_response = json.loads(response_text)
 # print(parsed_response)
 # print(type(parsed_response))
 
-grades = []
+# grades = []
 
-for student in parsed_response["students"]:
-	grades.append(student["finalGrade"])
+# for student in parsed_response["students"]:
+# 	grades.append(student["finalGrade"])
 	
-# print(grades)
+# # print(grades)
+
+grades = [student["finalGrade"] for student in parsed_response["students"]]
 
 print("The average grade is: " + str(st.mean(grades)))
 print("The minimum grade is: " + str(min(grades)))
 print("The maximum grade is: " + str(max(grades)))
+
