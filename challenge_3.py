@@ -32,6 +32,8 @@ parsed_response = json.loads(response_text)
 	
 # # print(grades)
 
+print (parsed_response)
+
 grades = [student["finalGrade"] for student in parsed_response["students"]]
 
 print("The average grade is: " + str(st.mean(grades)))
